@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+
+
+
+    <h1 [ngSwitch]="route.component.name">
+
+      <!-- Un back si ce n'est pas ColorExtractorComponent -->
+      <a *ngSwitchCase="'ColorExtractorComponent'" mat-button>
+        <span>Color Extractor</span>
+
+      </a>
+      <button mat-button *ngSwitchDefault (click)="onBack()">
+        <mat-icon class="icon"> arrow_back</mat-icon>
+        <span>Back</span>
+
+      </button>
+    </h1>
+
+    <span class="spacer"></span>
+
+    <a mat-button>
+      <img class="icon" src="../../../assets/images/icons/github-circle-white-transparent.svg" alt="">
+      <span>Github</span>
+
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
