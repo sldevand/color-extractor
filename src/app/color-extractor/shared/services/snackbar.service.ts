@@ -9,6 +9,19 @@ export class SnackbarService {
 
   constructor(private snackBar: MatSnackBar) { }
 
+  onGalleryBack(): MatSnackBarRef<SimpleSnackBar> {
+    return this.snackBar.open('Back to gallery', "", { duration: 3000 });
+  }
+
+  onGalleryFetch(): MatSnackBarRef<SimpleSnackBar> {
+    return this.snackBar.open('Gallery Fetched', "", { duration: 3000 });
+  }
+
+  onImageExists(): MatSnackBarRef<SimpleSnackBar> {
+
+    return this.snackBar.open('Image already exists', "", { duration: 3000 });
+  }
+
   onRead(): MatSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open('File Reading...', "", { duration: 3000 });
   }
@@ -19,6 +32,18 @@ export class SnackbarService {
 
   onReadError(): MatSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open('File Reading Error', "", { duration: 3000 });
+  }
+
+  onStore(): MatSnackBarRef<SimpleSnackBar> {
+    return this.snackBar.open('Image Storing...', "", { duration: 3000 });
+  }
+
+  onStoreSuccess(): MatSnackBarRef<SimpleSnackBar> {
+    return this.snackBar.open('Image Storing OK', "", { duration: 3000 });
+  }
+
+  onStoreError(): MatSnackBarRef<SimpleSnackBar> {
+    return this.snackBar.open('Image Storing Error', "", { duration: 3000 });
   }
 
   onSubmit(): MatSnackBarRef<SimpleSnackBar> {

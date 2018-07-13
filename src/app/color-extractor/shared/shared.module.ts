@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatIconModule, MatButtonModule, MatSnackBarModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatButtonModule, MatSnackBarModule, MatProgressSpinnerModule, MatGridListModule, MatFormFieldModule, MatFormFieldControl, MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -12,7 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule
+    
   ],
   declarations: [],
   exports: [
@@ -22,7 +31,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule
   ]
 })
 

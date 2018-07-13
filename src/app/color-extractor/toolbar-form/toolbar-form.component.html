@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  
+    <form [formGroup]="formGroup">
+      <mat-form-field class="full-width">
+          <input matInput placeholder="File name" formControlName="filename" value="{{image?.filename}}">
+          <mat-error *ngIf="formGroup.get('filename').hasError('email') && !formGroup.get('filename').hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="formGroup.get('filename').hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    </form>    
+  </mat-toolbar-row>
+</mat-toolbar>

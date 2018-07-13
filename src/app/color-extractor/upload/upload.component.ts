@@ -4,6 +4,7 @@ import { ImageInterface } from '../shared/models/image-interface.model';
 import { Image } from '../shared/models/image.model';
 import { SnackbarService } from '../shared/services/snackbar.service';
 import { ImageService } from '../shared/services/image.service';
+import { StorageService } from '../shared/services/storage.service';
 
 @Component({
   selector: 'upload',
@@ -16,8 +17,8 @@ export class UploadComponent implements OnInit {
   constructor(
     private imageApiService: ImageApiService,
     private snackBarService: SnackbarService,
-    private imageService : ImageService
-
+    private imageService: ImageService,
+    private storageService: StorageService
   ) { }
 
   ngOnInit(): void {
@@ -29,11 +30,22 @@ export class UploadComponent implements OnInit {
     this.snackBarService.onRead();
     this.reader.onload = (event) => {
       this.snackBarService.onReadSuccess();
-      this.post(file);
+      this.beforePost(file);
+
     };
     this.reader.onerror = event => this.snackBarService.onReadError();
     this.reader.readAsDataURL(file);
 
+  }
+
+  beforePost(file: File) {
+    this.imageService.findBySrc(this.reader.result).subscribe(
+      async (image: Image) => {
+        await image ?
+          this.snackBarService.onImageExists() :
+          this.post(file);
+      }
+    );
   }
 
   post(file: File) {
@@ -43,24 +55,26 @@ export class UploadComponent implements OnInit {
         this.snackBarService.onSubmitSuccess();
         this.get({ ...data.uploaded[0] });
       },
-      (error) =>  this.snackBarService.onSubmitError()
+      (error) => this.snackBarService.onSubmitError()
     );
-
   }
 
   get(image: Image) {
     this.snackBarService.onExtract();
     this.imageApiService.get(image).subscribe(
 
-        (data:ImageInterface) => {
-            let uploaded = data.results[0].info;
-            uploaded.id = image.id;
-            uploaded.fileName = image.fileName;
-            uploaded.src=this.reader.result;
-            this.imageService.post(uploaded);
-            this.snackBarService.onExtractSuccess();            
-        },
-        (error) =>  this.snackBarService.onExtractError()
+      async (data: ImageInterface) => {
+        var uploaded = await data.results[0].info;
+        uploaded.id = image.id;
+        uploaded.filename = image.filename;
+        uploaded.src = this.reader.result;
+        this.imageService.post(uploaded);
+        this.storageService.post(uploaded);
+        this.snackBarService.onExtractSuccess();
+      },
+      (error) => this.snackBarService.onExtractError()
     );
   }
+
+
 }

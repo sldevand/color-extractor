@@ -6,6 +6,9 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { SharedModule } from './shared/shared.module';
 import { ColorExtractorRoutingModule } from './color-extractor-routing/color-extractor-routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarFormComponent } from './toolbar-form/toolbar-form.component';
+import { ColorGridComponent } from './color-grid/color-grid.component';
+
 
 
 @NgModule({
@@ -20,14 +23,18 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     ImageComponent,
     UploadComponent,
     GalleryComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ToolbarFormComponent,
+    ColorGridComponent,
   ],
   exports: [
     ColorExtractorComponent,
     ImageComponent,
     UploadComponent,
     GalleryComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ToolbarFormComponent,
+    ColorGridComponent
 
   ]
 })

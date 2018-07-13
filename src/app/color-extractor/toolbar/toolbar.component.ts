@@ -14,7 +14,7 @@ export class ToolbarComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location
   ) {
-    console.log(this.route);
+  
 
   }
 
@@ -23,7 +23,6 @@ export class ToolbarComponent implements OnInit {
 
   onBack(): void {
     this.location.back();
-
   }
 
 }
