@@ -4,17 +4,14 @@ import { ColorExtractorComponent } from '../color-extractor.component';
 import { ImageComponent } from '../image/image.component';
 import { Routes, RouterModule } from '@angular/router';
 
-
-
 const routes: Routes = [
   {
-    path : 'images',
-    component : ColorExtractorComponent
-
+    path: 'images',
+    component: ColorExtractorComponent
   },
   {
-    path : 'image/:id',
-    component : ImageComponent
+    path: 'image/:id',
+    component: ImageComponent
   }
 ];
 

@@ -30,7 +30,7 @@ export class UploadComponent implements OnInit {
     this.snackBarService.onRead();
     this.reader.onload = (event) => {
       this.snackBarService.onReadSuccess();
-      this.beforePost(file);
+      if(file) this.beforePost(file);
 
     };
     this.reader.onerror = event => this.snackBarService.onReadError();

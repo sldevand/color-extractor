@@ -1,3 +1,3 @@
-export interface UserInterface{
-    token:string;
+export interface UserInterface {
+    token: string;
 }

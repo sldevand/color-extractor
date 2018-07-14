@@ -1,5 +1,4 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { FileDownloaderService } from './file-downloader.service';
 
 describe('FileDownloaderService', () => {

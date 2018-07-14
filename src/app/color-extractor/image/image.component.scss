@@ -1,12 +1,4 @@
 @import "~@angular/material/_theming";
-mat-grid-tile{
-    background-size:  100% auto;
-    background-clip: padding-box;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-color: black; 
-    cursor: pointer;
-}
 
 :host {
     position: absolute;
@@ -15,4 +7,18 @@ mat-grid-tile{
     background-color: map_get($mat-grey,200);
 
 }
+
+mat-grid-tile{
+    background-size:  90% auto;
+    background-clip: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black; 
+    cursor: pointer;
+}
+
+mat-card{
+    margin:1rem;
+}
+
 

@@ -1,11 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageService } from '../shared/services/image.service';
 import { Image } from '../shared/models/image.model';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { StorageService } from '../shared/services/storage.service';
 import { ImageInterface } from '../shared/models/image-interface.model';
-
 @Component({
   selector: 'image',
   templateUrl: './image.component.html',

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
 import { DomSanitizer } from '@angular/platform-browser';
-import {ObservableMedia, MediaChange} from '@angular/flex-layout';
+import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 
 @Component({
   selector: 'color-grid',
@@ -11,12 +11,12 @@ import {ObservableMedia, MediaChange} from '@angular/flex-layout';
 export class ColorGridComponent implements OnInit {
 
   @Input() colors;
-  @Input() title:string;
+  @Input() title: string;
   private cols: number = 4;
   private heightRatio: number = 2;
 
   constructor(
-    private sanitizer:DomSanitizer,
+    private sanitizer: DomSanitizer,
     private media: ObservableMedia
   ) { }
 
@@ -24,11 +24,11 @@ export class ColorGridComponent implements OnInit {
     this.media.asObservable().subscribe(
       (changes: MediaChange) => {
         this.cols = this.getColNumber(changes);
-        this.heightRatio=this.getHeighRatio(changes);
+        this.heightRatio = this.getHeighRatio(changes);
       }
     );
   }
- 
+
   getColNumber(changes: MediaChange): number {
     switch (changes.mqAlias) {
       case "xs":
@@ -49,13 +49,13 @@ export class ColorGridComponent implements OnInit {
   getHeighRatio(changes: MediaChange): number {
     switch (changes.mqAlias) {
       case "xs":
-        return 1;      
+        return 1;
       default:
         return 2;
     }
   }
 
-  getBackgroundColor(color:string){
+  getBackgroundColor(color: string) {
     return this.sanitizer.bypassSecurityTrustStyle(`${color}`);
   }
 }

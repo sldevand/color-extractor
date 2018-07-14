@@ -1,5 +1,5 @@
 <h4>{{title}}</h4>
-<mat-grid-list cols="{{cols}}" rowHeight="5:{{heightRatio}}">
+<mat-grid-list cols="{{cols}}" rowHeight="5:{{heightRatio}}" gutterSize="0.4rem">
   <mat-grid-tile 
     *ngFor="let color of colors" 
     [style.background-color]="getBackgroundColor(color?.html_code)">

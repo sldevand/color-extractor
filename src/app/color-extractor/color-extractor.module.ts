@@ -10,6 +10,8 @@ import { ToolbarFormComponent } from './toolbar-form/toolbar-form.component';
 import { ColorGridComponent } from './color-grid/color-grid.component';
 import { ExtractCssComponent } from './extract-css/extract-css.component';
 import { DeleteImageComponent } from './delete-image/delete-image.component';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 
 
@@ -30,7 +32,8 @@ import { DeleteImageComponent } from './delete-image/delete-image.component';
     ToolbarFormComponent,
     ColorGridComponent,
     ExtractCssComponent,
-    DeleteImageComponent
+    DeleteImageComponent,
+    DialogComponent
 
   ],
   exports: [
@@ -42,7 +45,8 @@ import { DeleteImageComponent } from './delete-image/delete-image.component';
     ToolbarFormComponent,
     ColorGridComponent,
     ExtractCssComponent,
-    DeleteImageComponent
+    DeleteImageComponent,
+    DialogComponent
 
   ]
 })

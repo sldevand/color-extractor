@@ -7,6 +7,4 @@ export interface ImageInterface {
     results: Array<ImageInterface>;
     info: Image;
     src: string;
-
-
 }

@@ -3,7 +3,10 @@
   <mat-grid-tile *ngIf="image" [style.background-image]="getBackground(image.src)"></mat-grid-tile>
 </mat-grid-list>
 <toolbar-form [image]="image"></toolbar-form>
-<color-grid [title]="'Background color'" [colors]="image?.background_colors"></color-grid>
-<color-grid [title]="'Foreground color'" [colors]="image?.foreground_colors"></color-grid>
-<color-grid [title]="'Image color'" [colors]="image?.image_colors"></color-grid>
-<delete-image [image]="image"></delete-image>
+
+<mat-card>
+  <color-grid [title]="'Background color'" [colors]="image?.background_colors"></color-grid>
+  <color-grid [title]="'Foreground color'" [colors]="image?.foreground_colors"></color-grid>
+  <color-grid [title]="'Image color'" [colors]="image?.image_colors"></color-grid>
+  <delete-image [image]="image"></delete-image>
+</mat-card>

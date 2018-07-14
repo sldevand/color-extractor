@@ -1,0 +1,8 @@
+@import "~@angular/material/_theming";
+h2,#yes{
+    color:map_get($mat-pink, 400);
+}
+
+mat-dialog-actions{
+    margin:auto;
+}
