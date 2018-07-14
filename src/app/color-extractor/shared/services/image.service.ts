@@ -31,4 +31,15 @@ export class ImageService {
   findBySrc(src: string): Observable<Image> {
     return of(this.images.find((image: Image) => image.src === src));
   }
+
+  delete(image: Image): Observable<Image[]> {
+
+    for (let i = 0; i < this.images.length; i++) {
+      if (this.images[i].src === image.src) {
+        this.images.splice(i, 1);
+        break;
+      }
+    }
+    return of(this.images);
+  }
 }

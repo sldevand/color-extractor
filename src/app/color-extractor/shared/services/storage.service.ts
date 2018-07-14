@@ -30,4 +30,19 @@ export class StorageService {
     return this.localStorage.getItem<ImageInterface[]>(`${namespace}-images`);
   }
 
+  delete(image: Image): void {
+    this.get().subscribe(
+      async (images: ImageInterface[]) => {
+        images = await images || [];
+        for (let i = 0; i < images.length; i++) {
+          if (images[i].src === image.src) {
+            images.splice(i,1);
+            break;
+          }
+        }
+        this.localStorage.setItem(`${namespace}-images`, images).subscribe(() => { });
+      }
+    )
+  }
+
 }

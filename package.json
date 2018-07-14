@@ -8,7 +8,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "generate":"ng generate",
+    "compgen":"ng generate component $path --flat module=color-extractor"
+
+
   },
   "private": true,
   "dependencies": {
