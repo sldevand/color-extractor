@@ -13,6 +13,7 @@ export class ColorGridComponent implements OnInit {
   @Input() colors;
   @Input() title:string;
   private cols: number = 4;
+  private heightRatio: number = 2;
 
   constructor(
     private sanitizer:DomSanitizer,
@@ -21,7 +22,10 @@ export class ColorGridComponent implements OnInit {
 
   ngOnInit() {
     this.media.asObservable().subscribe(
-      (changes: MediaChange) => this.cols = this.getColNumber(changes)
+      (changes: MediaChange) => {
+        this.cols = this.getColNumber(changes);
+        this.heightRatio=this.getHeighRatio(changes);
+      }
     );
   }
  
@@ -39,6 +43,15 @@ export class ColorGridComponent implements OnInit {
         return 10;
       default:
         return 6;
+    }
+  }
+
+  getHeighRatio(changes: MediaChange): number {
+    switch (changes.mqAlias) {
+      case "xs":
+        return 1;      
+      default:
+        return 2;
     }
   }
 

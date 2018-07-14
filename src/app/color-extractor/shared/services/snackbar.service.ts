@@ -70,4 +70,8 @@ export class SnackbarService {
     return this.snackBar.open('Image Extracting Error', "", { duration: 3000 });
   }
 
+  onExtractToCSS(): MatSnackBarRef<SimpleSnackBar> {
+    return this.snackBar.open('CSS Extracting to file...', "", { duration: 3000 });
+  }
+
 }

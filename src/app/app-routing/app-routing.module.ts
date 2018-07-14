@@ -4,9 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path : '',
-    redirectTo:'/images',
-    pathMatch:'full'
+    path: '',
+    redirectTo: '/images',
+    pathMatch: 'full'
   }
 ];
 

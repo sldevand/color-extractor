@@ -37,11 +37,9 @@ export class GalleryComponent implements OnInit {
       case "sm":
         return 4;
       case "md":
-        return 6;
       case "lg":
-        return 8;
       case "xl":
-        return 10;
+        return 6;
       default:
         return 6;
     }

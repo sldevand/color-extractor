@@ -1,12 +1,20 @@
-.image-empty{
-   
-    background: url(/assets/images/items/empty-image.png) center;
+@import "~@angular/material/_theming";
+.image-empty {
+  background: url(/assets/images/items/empty-image.png) center;
 }
 
-mat-grid-tile{
-    background-size: 100% auto;
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-color: black; 
-    cursor: pointer;
+mat-grid-tile {
+  background-size: 100% auto;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: black;
+  box-shadow: 2px 2px 5px map_get($mat-grey, 700);
+  cursor: pointer;
 }
+
+
+
+mat-grid-tile:hover {
+  box-shadow: 5px 5px 10px map_get($mat-grey, 700);
+}
+

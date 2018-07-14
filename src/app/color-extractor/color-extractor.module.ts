@@ -8,6 +8,7 @@ import { ColorExtractorRoutingModule } from './color-extractor-routing/color-ext
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarFormComponent } from './toolbar-form/toolbar-form.component';
 import { ColorGridComponent } from './color-grid/color-grid.component';
+import { ExtractCssComponent } from './extract-css/extract-css.component';
 
 
 
@@ -26,6 +27,7 @@ import { ColorGridComponent } from './color-grid/color-grid.component';
     ToolbarComponent,
     ToolbarFormComponent,
     ColorGridComponent,
+    ExtractCssComponent,
   ],
   exports: [
     ColorExtractorComponent,
@@ -34,7 +36,8 @@ import { ColorGridComponent } from './color-grid/color-grid.component';
     GalleryComponent,
     ToolbarComponent,
     ToolbarFormComponent,
-    ColorGridComponent
+    ColorGridComponent,
+    ExtractCssComponent,
 
   ]
 })

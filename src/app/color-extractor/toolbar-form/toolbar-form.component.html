@@ -1,16 +1,19 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-  
-    <form [formGroup]="formGroup">
+
+  <mat-toolbar-row fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <form [formGroup]="formGroup" fxFlex="70%" fxFlexAlign="center">
       <mat-form-field class="full-width">
-          <input matInput placeholder="File name" formControlName="filename" value="{{image?.filename}}">
-          <mat-error *ngIf="formGroup.get('filename').hasError('email') && !formGroup.get('filename').hasError('required')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="formGroup.get('filename').hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-    </form>    
+        <input matInput placeholder="File name" formControlName="filename" value="{{image?.filename}}">
+        <mat-error *ngIf="formGroup.get('filename').hasError('pattern') && !formGroup.get('filename').hasError('required')">
+          Please enter a valid file name
+        </mat-error>
+        <mat-error *ngIf="formGroup.get('filename').hasError('required')">
+          A file name is
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+
+    <extract-css [image]="image" fxFlexAlign="center"></extract-css>
   </mat-toolbar-row>
 </mat-toolbar>

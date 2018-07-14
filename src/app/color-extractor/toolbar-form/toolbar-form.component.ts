@@ -11,6 +11,8 @@ import { Image } from "../shared/models/image.model";
 export class ToolbarFormComponent implements OnInit {
   @Input() image: Image;
 
+
+  private filenamePattern: string = "/^[\w,\s-]+\.[A-Za-z]{3,4}$/";
   private formGroup: FormGroup;
   private filename: string;
 
@@ -37,7 +39,7 @@ export class ToolbarFormComponent implements OnInit {
         filename: [
           this.filename,
           [
-            Validators.email,
+            Validators.pattern(this.filenamePattern),
             Validators.required
           ]
         ]
