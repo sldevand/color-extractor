@@ -5,6 +5,19 @@ Extracts main colors from a picture to get a graphic chart.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+## Prerequisites
+
+It consumes [Imagga API](https://docs.imagga.com/)
+<br>All in One Image Recognition Solutions
+for Developers and Businesses
+
+If you want to use this API, create an account and put your authentication token in assets/config.json file with a JSON object like :
+```
+{
+    "token":"aZertydupofiofn6564RbsbnsblkjhgE6766G"
+}
+```
+
 ## Live Example
 
 ![Live Example](./resources/color-extractor.gif)
