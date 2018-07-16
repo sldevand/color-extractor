@@ -19,7 +19,7 @@ If you want to use this API, create an account and put your authentication token
 ```
 
 ## Live Example
-![Live Example](./resources/color-extractor.gif)
+![Live Example](./resources/presentation.gif)
 
 ## Development server
 

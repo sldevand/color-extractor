@@ -1,6 +1,11 @@
 @import "~@angular/material/_theming";
+
+$shadow:2px 2px 5px map_get($mat-grey, 700);
+$hovered-shadow: 5px 5px 10px map_get($mat-grey, 700);
+
 .image-empty {
-  background: url(/assets/images/items/empty-image.png) center;
+  background: url("/assets/images/items/empty-image.png");
+  background-position: center;
 }
 
 mat-grid-list {
@@ -11,13 +16,14 @@ mat-grid-tile {
   background-size: 95% auto;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: map_get($mat-teal, 300);
-  box-shadow: 2px 2px 5px map_get($mat-grey, 700);
+  background-color: map_get($mat-grey, 900);
+  box-shadow: $shadow;
   cursor: pointer;
   border-radius: 1rem;
+
+  &:hover{
+    box-shadow: $hovered-shadow
+  }
 }
 
-mat-grid-tile:hover {
-  box-shadow: 5px 5px 10px map_get($mat-grey, 700);
-}
 
